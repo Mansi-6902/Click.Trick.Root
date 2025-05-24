@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin
+Disallow: /author/hidden
+Disallow: /author/upload.html
+Disallow: /smbshare
+Disallow: /backup.zip
+
+# Some areas are off-limits...or are they?
+# Ever tried decoding what's left behind?
+
+

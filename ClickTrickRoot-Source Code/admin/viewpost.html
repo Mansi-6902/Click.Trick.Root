@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Author Posts - CTF Hints</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .post {
+      border-bottom: 1px solid #e2e2e2;
+      padding: 25px 0;
+      transition: background-color 0.3s ease;
+    }
+    .post:hover {
+      background-color: #f9f9f9;
+    }
+    .author {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #c4c4c4;
+      margin-right: 15px;
+    }
+    .author-details {
+      display: flex;
+      flex-direction: column;
+    }
+    .author-name {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    .timestamp {
+      font-size: 0.9em;
+      color: #777;
+    }
+    .content {
+      margin: 15px 0;
+      line-height: 1.6;
+      font-size: 1.05em;
+    }
+    .hint {
+      color: #d9534f; /* Highlighted hints */
+      font-weight: bold;
+    }
+    .actions {
+      display: flex;
+      gap: 20px;
+      font-size: 0.95em;
+      color: #0073b1;
+      cursor: pointer;
+    }
+    .actions div {
+      padding: 8px;
+      border-radius: 5px;
+      transition: background-color 0.2s ease;
+    }
+    .actions div:hover {
+      background-color: #f1f1f1;
+    }
+    .like-btn.liked {
+      color: #0a66c2;
+      font-weight: bold;
+    }
+    .liked {
+      color: #0a66c2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Post 1 -->
+    <div class="post">
+      <div class="author">
+        <div class="avatar"></div>
+        <div class="author-details">
+          <div class="author-name">Root Admin</div>
+          <div class="timestamp">Just now</div>
+        </div>
+      </div>
+      <div class="content">
+        Noticed someone exposed the internal <span class="hint">/admin/users/delete</span> endpoint again. If you're messing with that, at least use <span class="hint">CSRF tokens</span> next time 😏
+      </div>
+      <div class="actions">
+        <div class="like-btn">👍 Like</div>
+        <div>💬 Comment</div>
+      </div>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="post">
+      <div class="author">
+        <div class="avatar"></div>
+        <div class="author-details">
+          <div class="author-name">DevOps Bot</div>
+          <div class="timestamp">10 minutes ago</div>
+        </div>
+      </div>
+      <div class="content">
+        Reminder: Samba shares on <span class="hint">target_machine</span> are still misconfigured <span class="hint">root</span> perms. Please fix before someone finds <span class="hint">`flag.txt`</span> in <span class="hint">`/root/share`</span> 🫣
+      </div>
+      <div class="actions">
+        <div class="like-btn">👍 Like</div>
+        <div>💬 Comment</div>
+      </div>
+    </div>
+
+    <!-- Post 3 -->
+    <div class="post">
+      <div class="author">
+        <div class="avatar"></div>
+        <div class="author-details">
+          <div class="author-name">Jane Doe</div>
+          <div class="timestamp">30 minutes ago</div>
+        </div>
+      </div>
+      <div class="content">
+        Can't believe the internal portal still lets you POST to <span class="hint">/admin/users/add</span> without being logged in. Someone’s gonna exploit that sooner or later.
+      </div>
+      <div class="actions">
+        <div class="like-btn">👍 Like</div>
+        <div>💬 Comment</div>
+      </div>
+    </div>
+
+    <!-- Post 4 -->
+    <div class="post">
+      <div class="author">
+        <div class="avatar"></div>
+        <div class="author-details">
+          <div class="author-name">Security Intern</div>
+          <div class="timestamp">1 hour ago</div>
+        </div>
+      </div>
+      <div class="content">
+        Just tested CSRF against our old form. What if smart hacker find CSRF vulnaribilty and allow <span class="hint">user type as "admin"</span> and set <span class="hint">admin=true</span>, you might end up with more than just a test account 😅. Secure it ASAP Don't let hacker delete users!!!!
+      </div>
+      <div class="actions">
+        <div class="like-btn">👍 Like</div>
+        <div>💬 Comment</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Get all like buttons
+    const likeButtons = document.querySelectorAll('.like-btn');
+
+    likeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (button.classList.contains('liked')) {
+          button.textContent = '👍 Like';
+        } else {
+          button.textContent = '👍 Liked';
+        }
+        button.classList.toggle('liked');
+      });
+    });
+  </script>
+
+</body>
+</html>
