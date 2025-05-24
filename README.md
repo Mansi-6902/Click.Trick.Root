@@ -31,7 +31,7 @@ This is a vulnerable lab designed as part of the **NullClass Cybersecurity Inter
 
 - ✅ Vulnerable Website Source Code
 - ✅ Virtual Machine (VM) [Download Here](https://drive.google.com/file/d/10VCSkxFXg0kCwLLSejvuUoCgKWeMWYnU/view)
-- ✅ Detailed Report with Walkthrough
+- ✅ Detailed Report with Walkthroughc (PDF)[Download Here](https://drive.google.com/file/d/1xlC9gZulwVpUwoPWd65TISkL-T6U7Kuw/view?usp=sharing)
 
 ---
 
