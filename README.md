@@ -23,7 +23,7 @@ This is a vulnerable lab designed as part of the **NullClass Cybersecurity Inter
   - Nmap
   - Metasploit
   - Wireshark
-  - CIS-CAT
+  
 
 ---
 
